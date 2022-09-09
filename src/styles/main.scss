@@ -41,7 +41,7 @@ body {
 
 	button {
 		@include padding(15px 40px);
-		font-size: calc(0.775rem + (62.5vw - 30em) / 72);
+		font-size: calc(0.875rem + (62.5vw - 30em) / 72);
 		border: none;
 		background-color: transparent;
 		color: $green;
@@ -136,7 +136,7 @@ body {
 	body {
 		p {
 			line-height: 1.5;
-			font-size: calc(0.875rem + (62.5vw - 30em) / 72);
+			font-size: 0.8rem;
 		}
 		.about,
 		.contact,

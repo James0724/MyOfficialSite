@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ProjectCard from "./ProjectCard";
-import Wave from "./Wave";
+//import ProjectCard from "./ProjectCard";
+//import Wave from "./Wave";
 
 // const accessToken = process.env.REACT_APP_ACCESS_TOKEN;
 // const spaceId = process.env.REACT_APP_SPACE_ID;

@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef, useEffect } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Home from "./components/Home";
 
+import "./styles/main.scss";
+import Starter from "./components/Starter";
+
+const App = () => {
+	const [preloader, setPreloader] = useState(true);
+
+	const [timer, setTimer] = useState(5);
+
+	const id = useRef(null);
+
+	const clear = () => {
+		window.clearInterval(id.current);
+		setPreloader(false);
+	};
+
+	useEffect(() => {
+		id.current = window.setInterval(() => {
+			setTimer((timer) => timer - 1);
+		}, 1000);
+	}, []);
+
+	useEffect(() => {
+		if (timer === 0) {
+			clear();
+		}
+	}, [timer]);
+
+	return <>{preloader ? <Starter /> : <Home />}</>;
+};
 export default App;
